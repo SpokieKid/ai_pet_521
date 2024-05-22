@@ -1,0 +1,36 @@
+{
+  "players": [
+    {
+      "name": "Alice",
+      "attribute": {
+        "personality": "easy to be angry",
+        "age": "14",
+        "gender": "girl",
+        "job": "reception at bank"
+      }
+    },
+    {
+      "name": "Bob",
+      "attribute": {
+        "personality": "able to soothe angry player",
+        "age": "24",
+        "gender": "boy",
+        "job": "broker who needs to work with the receptionists at bank"
+      }
+    }
+  ],
+  "possbile actions determinant": [
+    {
+      "age_age": "bigger / older age tend to speak more like an adult person, while smaller age / younger ones tend to be more naive",
+      "job_job": "different player will have different jobs, and they interact like the real-world ones.",
+      "gender_gender": "boys will speak more Machismo, while girls speak more Feminism."
+    }
+  ],
+  "possbile action attributes": [
+    {
+        "words_spoken": "what the player should say in the situation",
+        "emotion": "how the words_spoken are spoken, based on the player info",
+        "body_language": "player's body language when speaking the words_spoken"
+    }
+    ]
+}

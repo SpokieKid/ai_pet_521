@@ -2,7 +2,7 @@ import React, { useState, useCallback } from 'react';
 import axios from 'axios';
 import './App.css';
 
-const API_KEY = 'sk-b0a46fd624964b57a9ae188d2e60eba3';
+const API_KEY = process.env.DEEPSEEK_KEY;
 const BASE_URL = 'https://api.deepseek.com/chat/completions';
 
 function App() {

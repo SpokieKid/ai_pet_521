@@ -2,7 +2,7 @@ import React, { useState, useCallback } from 'react';
 import axios from 'axios';
 import './App.css';
 
-const BASE_URL = 'http://localhost:5000/api/chat';  // 本地代理服务器的 URL
+const BASE_URL = 'https://ai-pet-521.vercel.app/api/chat';  // 更新为你部署的 Vercel 地址
 
 function App() {
   const [userInput, setUserInput] = useState('');

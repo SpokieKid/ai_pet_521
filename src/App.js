@@ -2,8 +2,7 @@ import React, { useState, useCallback } from 'react';
 import axios from 'axios';
 import './App.css';
 
-const API_KEY = process.env.DEEPSEEK_KEY;  // 从环境变量中获取 API 密钥
-const BASE_URL = 'https://api.deepseek.com/chat/completions';
+const BASE_URL = 'http://localhost:5000/api/chat';  // 本地代理服务器的 URL
 
 function App() {
   const [userInput, setUserInput] = useState('');
@@ -11,10 +10,9 @@ function App() {
   const [conversationHistory, setConversationHistory] = useState([
     {
       role: 'system',
-      content: "You are a game world generator. I have provided you with a JSON file containing the player info and player-to-player action info. You must simulate possible actions based on the player info and the player-to-player action info. You can refer to similar games like Stardew Valley, Dwarf Fortress, where players/npcs have random actions with another player/npcs. What you need to simulate are the variables detailed in the 'action attributes' section of the JSON file. Simulate 1 possible actions based on the action attributes."
+      content: "You are a game world generator. I have provided you with a JSON file containing the player info and player-to-player action info. You must simulate possible actions based on the player info and the player-to-player action info. You can refer to similar games like Stardew Valley, Dwarf Fortress, where players/npcs have random actions with another player/npcs. What you need to simulate are the variables detailed in the 'action attributes' section of the JSON file. Simulate 10 possible actions based on the action attributes."
     }
   ]);
-
 
   const handleInputChange = (event) => {
     setUserInput(event.target.value);
@@ -45,8 +43,7 @@ function App() {
       const response = await axios.post(BASE_URL, data, {
         headers: {
           'Content-Type': 'application/json',
-          'Accept': 'application/json',
-          'Authorization': `Bearer ${API_KEY}`  // 使用环境变量
+          'Accept': 'application/json'
         }
       });
 
